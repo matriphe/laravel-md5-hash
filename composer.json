@@ -1,7 +1,7 @@
 {
-    "name": "matriphe/laravel-md5-password-hash",
-    "description": "Laravel 5 package to use unsecured MD5 password hash",
-    "keywords": ["laravel", "md5", "password", "hash"],
+    "name": "matriphe/laravel-md5-hash",
+    "description": "Laravel 5 package to use unsecured MD5 for password hash",
+    "keywords": ["laravel", "md5", "hash", "password"],
     "require": {
         "illuminate/support": "5.*"
     },
