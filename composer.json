@@ -1,0 +1,32 @@
+{
+    "name": "matriphe/laravel-md5-password-hash",
+    "description": "Laravel 5 package to use unsecured MD5 password hash",
+    "keywords": ["laravel", "md5", "password", "hash"],
+    "require": {
+        "illuminate/support": "5.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0|^6.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Muhammad Zamroni",
+            "email": "halo@matriphe.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Matriphe\\Md5Hash\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Matriphe\\Md5Hash\\Test\\": "tests"
+        }
+    },
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
