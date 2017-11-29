@@ -28,7 +28,7 @@ class Md5Hash implements Hasher
      */
     public function check($value, $hashedValue, array $options = [])
     {
-        return $this->make($value) === $hashedValue;
+        return $this->make($value, $options) === $hashedValue;
     }
 
     /**

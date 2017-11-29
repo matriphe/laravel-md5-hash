@@ -36,6 +36,6 @@ class HashTest extends TestCase
      */
     public function needsRehash_function_returns_false()
     {
-        $this->assertFalse($this->hash->needsRehash(md5('zamroni')));
+        $this->assertFalse($this->hash->needsRehash(md5('matriphe')));
     }
 }
