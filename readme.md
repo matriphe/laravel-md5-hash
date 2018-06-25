@@ -21,7 +21,7 @@ composer require matriphe/laravel-md5-hash
 
 After installed, open `config/app.php` and find this line.
 ```php
-Illuminate\Hashing\HashServiceProvider::class::class
+Illuminate\Hashing\HashServiceProvider::class
 ``` 
 Comment or remove that line and add this line to override Laravel's hash handling.
 
