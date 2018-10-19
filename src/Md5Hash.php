@@ -7,6 +7,17 @@ use Illuminate\Contracts\Hashing\Hasher;
 class Md5Hash implements Hasher
 {
     /**
+     * Get information about the given hashed value.
+     *
+     * @param  string  $hashedValue
+     * @return array
+     */
+    public function info($hashedValue)
+    {
+        return $hashedValue;
+    }
+    
+    /**
      * Hash the given value.
      *
      * @param  string $value
