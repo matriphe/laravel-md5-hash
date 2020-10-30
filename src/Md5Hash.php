@@ -14,7 +14,7 @@ class Md5Hash implements Hasher
      */
     public function info($hashedValue)
     {
-        return $hashedValue;
+        return ['hashed' => $hashedValue];
     }
     
     /**
