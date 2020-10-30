@@ -6,6 +6,8 @@ use Illuminate\Contracts\Hashing\Hasher;
 
 class Md5Hash implements Hasher
 {
+	const ALGO = 'md5';
+
     /**
      * Get information about the given hashed value.
      *
@@ -14,7 +16,7 @@ class Md5Hash implements Hasher
      */
     public function info($hashedValue)
     {
-        return ['hashed' => $hashedValue, 'algo' => 'md5'];
+        return ['hashed' => $hashedValue, 'algo' => self::ALGO];
     }
     
     /**
@@ -26,7 +28,7 @@ class Md5Hash implements Hasher
      */
     public function make($value, array $options = [])
     {
-        return hash('md5', $value);
+        return hash(self::ALGO, $value);
     }
 
     /**
