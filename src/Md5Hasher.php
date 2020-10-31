@@ -3,21 +3,10 @@
 namespace Matriphe\Md5Hash;
 
 use Illuminate\Contracts\Hashing\Hasher;
-use Illuminate\Support\Manager;
 
-class Md5Hasher extends Manager implements Hasher
+class Md5Hasher implements Hasher
 {
 	const ALGO = 'md5';
-
-	/**
-	 * Get the default driver name.
-	 *
-	 * @return string
-	 */
-	public function getDefaultDriver()
-	{
-		return self::ALGO;
-	}
 
 	/**
      * Get information about the given hashed value.
