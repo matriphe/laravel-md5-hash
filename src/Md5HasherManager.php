@@ -64,7 +64,7 @@ class Md5HasherManager extends HashManager
 	 */
 	public function driver($driver = null)
 	{
-		return $this->getDefaultDriver();
+		return parent::driver($this->getDefaultDriver());
 	}
 
 
