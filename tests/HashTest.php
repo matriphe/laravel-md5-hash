@@ -51,7 +51,12 @@ class HashTest extends TestCase
 	public function info_function_returns_an_array()
 	{
 		$this->assertEquals(
-			['hashed' => 'matriphe', 'algo' => 'md5'],
+			[
+				"algo" => 'md5',
+				"algoName" => "md5",
+				"options" => [],
+			]
+			,
 			$this->hash->info('matriphe')
 		);
 	}

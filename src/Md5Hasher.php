@@ -16,7 +16,10 @@ class Md5Hasher implements Hasher
      */
     public function info($hashedValue)
     {
-        return ['hashed' => $hashedValue, 'algo' => self::ALGO];
+        return array_merge(
+        	password_get_info($hashedValue),
+	        ['algo' => self::ALGO, 'algoName' => self::ALGO]
+        );
     }
     
     /**
