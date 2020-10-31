@@ -6,22 +6,22 @@ use Illuminate\Contracts\Hashing\Hasher;
 
 class Md5Hasher implements Hasher
 {
-	const ALGO = 'md5';
+    const ALGO = 'md5';
 
-	/**
+    /**
      * Get information about the given hashed value.
      *
-     * @param  string  $hashedValue
+     * @param  string $hashedValue
      * @return array
      */
     public function info($hashedValue)
     {
         return array_merge(
-        	password_get_info($hashedValue),
-	        ['algo' => self::ALGO, 'algoName' => self::ALGO]
+            password_get_info($hashedValue),
+            ['algo' => self::ALGO, 'algoName' => self::ALGO]
         );
     }
-    
+
     /**
      * Hash the given value.
      *

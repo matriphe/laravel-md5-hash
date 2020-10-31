@@ -23,9 +23,9 @@ class HashServiceProvider extends ServiceProvider
             return new Md5HasherManager($app);
         });
 
-	    $this->app->singleton('hash.driver', function ($app) {
-		    return $app['hash']->driver();
-	    });
+        $this->app->singleton('hash.driver', function ($app) {
+            return $app['hash']->driver();
+        });
     }
 
     /**

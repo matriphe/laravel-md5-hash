@@ -8,10 +8,10 @@ use PHPUnit\Framework\TestCase;
 
 class HashTest extends TestCase
 {
-	/**
-	 * @var Hasher
-	 */
-	private $hash;
+    /**
+     * @var Hasher
+     */
+    private $hash;
 
     public function setUp()
     {
@@ -45,19 +45,18 @@ class HashTest extends TestCase
         $this->assertFalse($this->hash->needsRehash(md5('matriphe')));
     }
 
-	/**
-	 * @test
-	 */
-	public function info_function_returns_an_array()
-	{
-		$this->assertEquals(
-			[
-				"algo" => 'md5',
-				"algoName" => "md5",
-				"options" => [],
-			]
-			,
-			$this->hash->info('matriphe')
-		);
-	}
+    /**
+     * @test
+     */
+    public function info_function_returns_an_array()
+    {
+        $this->assertEquals(
+            [
+                'algo' => 'md5',
+                'algoName' => 'md5',
+                'options' => [],
+            ],
+            $this->hash->info('matriphe')
+        );
+    }
 }
