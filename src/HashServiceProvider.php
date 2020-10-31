@@ -20,7 +20,7 @@ class HashServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('hash', function ($app) {
-            return new Md5Hasher($app);
+            return new Md5HasherManager($app);
         });
 
 	    $this->app->singleton('hash.driver', function ($app) {
