@@ -5,7 +5,7 @@ namespace Matriphe\Md5Hash;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Support\Manager;
 
-class Md5Hash extends Manager implements Hasher
+class Md5Hasher extends Manager implements Hasher
 {
 	const ALGO = 'md5';
 

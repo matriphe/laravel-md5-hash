@@ -4,7 +4,7 @@ namespace Matriphe\Md5Hash\Test;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Hashing\Hasher;
-use Matriphe\Md5Hash\Md5Hash;
+use Matriphe\Md5Hash\Md5Hasher;
 use PHPUnit\Framework\TestCase;
 
 class HashTest extends TestCase
@@ -19,7 +19,7 @@ class HashTest extends TestCase
         parent::setUp();
 
         $app = $this->createMock(Application::class);
-        $this->hash = new Md5Hash($app);
+        $this->hash = new Md5Hasher($app);
     }
 
     /**
