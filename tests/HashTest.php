@@ -2,6 +2,7 @@
 
 namespace Matriphe\Md5Hash\Test;
 
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Hashing\Hasher;
 use Matriphe\Md5Hash\Md5Hash;
 use PHPUnit\Framework\TestCase;
@@ -17,7 +18,8 @@ class HashTest extends TestCase
     {
         parent::setUp();
 
-        $this->hash = new Md5Hash();
+        $app = $this->createMock(Application::class);
+        $this->hash = new Md5Hash($app);
     }
 
     /**
@@ -56,5 +58,11 @@ class HashTest extends TestCase
 		);
 	}
 
-
+	/**
+	 * @test
+	 */
+	public function getDefaultDriver_returns_md5()
+	{
+		$this->assertSame('md5', $this->hash->getDefaultDriver());
+	}
 }
