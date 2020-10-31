@@ -17,36 +17,6 @@ class Md5HasherManager extends HashManager
 	}
 
 	/**
-	 * Replace the Bcrypt hash Driver with MD5 Driver.
-	 *
-	 * @return Md5Hasher
-	 */
-	public function createBcryptDriver()
-	{
-		return $this->createMd5Driver();
-	}
-
-	/**
-	 * Replace the Argon hash Driver with MD5 Driver.
-	 *
-	 * @return Md5Hasher
-	 */
-	public function createArgonDriver()
-	{
-		return $this->createMd5Driver();
-	}
-
-	/**
-	 * Replace the Argon2id hash Driver with MD5 Driver.
-	 *
-	 * @return Md5Hasher
-	 */
-	public function createArgon2idDriver()
-	{
-		return $this->createMd5Driver();
-	}
-
-	/**
 	 * Get the default driver name, always return MD5.
 	 *
 	 * @return string
