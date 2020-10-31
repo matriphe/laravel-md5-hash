@@ -13,4 +13,14 @@ class Md5HasherManager extends HashManager
 	{
 		return new Md5Hasher();
 	}
+
+	/**
+	 * Get the default driver name.
+	 *
+	 * @return string
+	 */
+	public function getDefaultDriver()
+	{
+		return Md5Hasher::ALGO;
+	}
 }
