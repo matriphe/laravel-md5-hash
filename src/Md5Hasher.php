@@ -4,11 +4,11 @@ namespace Matriphe\Md5Hash;
 
 use Illuminate\Contracts\Hashing\Hasher;
 
-class Md5Hash implements Hasher
+class Md5Hasher implements Hasher
 {
 	const ALGO = 'md5';
 
-    /**
+	/**
      * Get information about the given hashed value.
      *
      * @param  string  $hashedValue
