@@ -3,6 +3,7 @@
     "description": "Laravel 5 package to use unsecured MD5 for password hash",
     "keywords": ["laravel", "md5", "hash", "password"],
     "require": {
+        "illuminate/hashing": "5.*",
         "illuminate/support": "5.*"
     },
     "require-dev": {
