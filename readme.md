@@ -6,7 +6,8 @@
 
 This package is used to replace Laravel's default hash to support old system that used MD5 for password hash. 
 
-Please use it with your own risk, since MD5 is not recommended to be used as password hash.
+> **Warning**
+> Please use it with your own risk, since MD5 is not recommended to be used as password hash.
 
 
 ## Installation
@@ -15,6 +16,12 @@ Using [Composer](https://getcomposer.org/), just run this command below.
 
 ```bash
 composer require matriphe/laravel-md5-hash
+```
+
+For Laravel < 6, use version 1.
+
+```bash
+composer require matriphe/laravel-md5-hash:1.*
 ```
 
 ## Configuration
