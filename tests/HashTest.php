@@ -8,47 +8,32 @@ use PHPUnit\Framework\TestCase;
 
 class HashTest extends TestCase
 {
-    /**
-     * @var Hasher
-     */
-    private $hash;
+    private Hasher $hash;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->hash = new Md5Hasher();
     }
 
-    /**
-     * @test
-     */
-    public function make_function_returns_correct_md5_hashed_value()
+    public function test_make_function_returns_correct_md5_hashed_value()
     {
         $this->assertSame(md5('matriphe'), $this->hash->make('matriphe'));
     }
 
-    /**
-     * @test
-     */
-    public function check_function_returns_correct_value()
+   public function test_check_function_returns_correct_value()
     {
         $this->assertTrue($this->hash->check('matriphe', md5('matriphe')));
         $this->assertFalse($this->hash->check('zamroni', md5('matriphe')));
     }
 
-    /**
-     * @test
-     */
-    public function needsRehash_function_returns_false()
+    public function test_needsRehash_function_returns_false()
     {
         $this->assertFalse($this->hash->needsRehash(md5('matriphe')));
     }
 
-    /**
-     * @test
-     */
-    public function info_function_returns_an_array()
+    public function test_info_function_returns_an_array()
     {
         $this->assertEquals(
             [
