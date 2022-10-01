@@ -8,7 +8,10 @@ use PHPUnit\Framework\TestCase;
 
 class HashTest extends TestCase
 {
-    private Hasher $hash;
+    /**
+     * @var Hasher
+     */
+    private $hash;
 
     public function setUp(): void
     {
