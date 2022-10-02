@@ -17,6 +17,7 @@ on:
         type: string
         required: true
 
+
 jobs:
   test_laravel:
     name: Laravel ${{ inputs.laravel_version }} (PHP ${{ inputs.php_version }})

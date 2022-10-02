@@ -1,10 +1,12 @@
 name: Test PR
+
 on:
   pull_request:
     types:
       - opened
       - reopened
       - synchronize
+
 
 jobs:
   check_php_style:
@@ -27,6 +29,7 @@ jobs:
         with:
           args: --dry-run
 
+
   test_laravel_6_7:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
     needs:
@@ -43,6 +46,7 @@ jobs:
       php_version: ${{ matrix.php-versions }}
       laravel_version: ${{ matrix.laravel-versions }}
 
+
   test_laravel_8:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
     needs:
@@ -58,6 +62,7 @@ jobs:
       operating_system: ${{ matrix.operating-system }}
       php_version: ${{ matrix.php-versions }}
       laravel_version: ${{ matrix.laravel-versions }}
+
 
   test_laravel_9:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
