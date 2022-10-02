@@ -9,17 +9,14 @@ on:
 jobs:
   test:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
-    runs-on: ${{ matrix.operating-system }}
     strategy:
       fail-fast: false
       matrix:
         operating-system: [ ubuntu-latest ]
         php-versions: [ '7.2', '7.3', '7.4', '8.0' ]
         laravel-versions: [ '6.*', '7.*' ]
-    steps:
-      - name: Run Laravel Test
-        uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
-        with:
-          operating_system: ${{ runner.os }}
-          php_version: ${{ matrix.php-versions }}
-          laravel_version: ${{ matrix.laravel-versions }}
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ runner.os }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
