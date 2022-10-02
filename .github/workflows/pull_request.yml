@@ -7,8 +7,8 @@ on:
       - synchronize
 
 jobs:
-  fix_style:
-    name: Fix PHP code style
+  check_php_style:
+    name: Check PHP code style
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
   test_laravel_6_7:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
     needs:
-      - fix_style
+      - check_php_style
     strategy:
       fail-fast: false
       matrix:
@@ -46,7 +46,7 @@ jobs:
   test_laravel_8:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
     needs:
-      - fix_style
+      - check_php_style
     strategy:
       fail-fast: false
       matrix:
@@ -62,7 +62,7 @@ jobs:
   test_laravel_9:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
     needs:
-      - fix_style
+      - check_php_style
     strategy:
       fail-fast: false
       matrix:
