@@ -34,3 +34,17 @@ jobs:
       operating_system: ${{ matrix.operating-system }}
       php_version: ${{ matrix.php-versions }}
       laravel_version: ${{ matrix.laravel-versions }}
+
+  test_laravel_9:
+    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '8.0', '8.1' ]
+        laravel-versions: [ '9.*' ]
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ matrix.operating-system }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
