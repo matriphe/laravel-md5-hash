@@ -7,8 +7,30 @@ on:
       - synchronize
 
 jobs:
+  fix_style:
+    name: Fix PHP code style
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache php-cs-fixer
+        uses: actions/cache@v3
+        with:
+          path: .php-cs-fixer.cache
+          key: ${{ runner.os }}-${{ github.repository }}-phpcsfixer-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-${{ github.repository }}-phpcsfixer-
+
+      - name: Run php-cs-fixer
+        uses: docker://oskarstark/php-cs-fixer-ga
+        with:
+          args: --dry-run
+
   test_laravel_6_7:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    needs:
+      - fix_style
     strategy:
       fail-fast: false
       matrix:
@@ -23,6 +45,8 @@ jobs:
 
   test_laravel_8:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    needs:
+      - fix_style
     strategy:
       fail-fast: false
       matrix:
@@ -37,6 +61,8 @@ jobs:
 
   test_laravel_9:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    needs:
+      - fix_style
     strategy:
       fail-fast: false
       matrix:
