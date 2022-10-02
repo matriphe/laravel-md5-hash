@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ inputs.branch }}
 
@@ -40,7 +40,7 @@ jobs:
 
       - name: Cache Composer packages
         id: composer-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: vendor
           key: ${{ inputs.operating_system }}-php-${{ inputs.php_version }}-laravel-${{ inputs.laravel_version }}-${{ hashFiles('**/composer.lock') }}
