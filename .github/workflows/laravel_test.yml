@@ -51,10 +51,10 @@ jobs:
             ${{ inputs.operating_system }}-
 
       - name: Install Laravel
-        run: composer require "laravel/framework:${{ inputs.laravel_version }}" --prefer-dist --no-progress
+        run: composer require "laravel/framework:${{ inputs.laravel_version }}" --prefer-dist --no-progress --no-plugins
 
       - name: Update Composer dependencies
-        run: composer update --prefer-dist --no-progress --no-suggest --optimize-autoloader
+        run: composer update --prefer-dist --no-progress --no-suggest --optimize-autoloader --no-plugins
 
       - name: Run tests
         run: vendor/bin/phpunit
