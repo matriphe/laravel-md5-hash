@@ -16,6 +16,10 @@ on:
         description: The Laravel version
         type: string
         required: true
+      branch:
+        description: The branch or git reference
+        type: string
+        required: false
 
 
 jobs:
@@ -26,6 +30,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.branch }}
 
       - name: Setup PHP with Composer
         uses: shivammathur/setup-php@v2
