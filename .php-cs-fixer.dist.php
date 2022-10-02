@@ -11,6 +11,11 @@ return (new Config())
         'no_extra_blank_lines' => true,
         'blank_line_after_namespace' => true,
         'blank_line_after_opening_tag' => true,
+        'binary_operator_spaces' => [
+            'operators' => [
+                '=' => 'single_space'
+            ]
+        ],
         'braces' => true,
         'cast_spaces' => true,
         'class_definition' => [
