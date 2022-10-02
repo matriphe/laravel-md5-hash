@@ -37,7 +37,27 @@ Now you can use built-in hash function using this command.
 Hash::make('password'); // return 5f4dcc3b5aa765d61d8327deb882cf99
 bcrypt('password'); // return 5f4dcc3b5aa765d61d8327deb882cf99
 ```
- 
+
+## Contribution
+
+All contributions are welcomed. Please create a pull request or merge request, and make sure all checks are passed ✅
+before merging.
+
+If the check failed on checking PHP style, please
+run [`vendor/bin/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to fix it.
+
+### Using Docker
+
+```bash
+docker run -it --rm -v $(pwd):/app -w /app oskarstark/php-cs-fixer-ga
+```
+
+### Local Deve
+
+```bash
+vendor/bin/php-cs-fixer fix
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
