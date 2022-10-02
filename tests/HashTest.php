@@ -25,7 +25,7 @@ class HashTest extends TestCase
         $this->assertSame(md5('matriphe'), $this->hash->make('matriphe'));
     }
 
-   public function test_check_function_returns_correct_value()
+    public function test_check_function_returns_correct_value()
     {
         $this->assertTrue($this->hash->check('matriphe', md5('matriphe')));
         $this->assertFalse($this->hash->check('zamroni', md5('matriphe')));
