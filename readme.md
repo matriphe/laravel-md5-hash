@@ -44,15 +44,15 @@ All contributions are welcomed. Please create a pull request or merge request, a
 before merging.
 
 If the check failed on checking PHP style, please
-run [`vendor/bin/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to fix it.
+run [`php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to fix it.
 
 ### Using Docker
 
 ```bash
-docker run -it --rm -v $(pwd):/app -w /app oskarstark/php-cs-fixer-ga
+docker run -it --rm -v $(pwd):/app -w /app oskarstark/php-cs-fixer-ga fix
 ```
 
-### Local Deve
+### Local Dev
 
 ```bash
 vendor/bin/php-cs-fixer fix
