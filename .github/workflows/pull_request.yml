@@ -1,8 +1,11 @@
-name: Laravel md5 Hash
-on: [push, pull_request]
+name: Test PR
+on:
+  pull_request:
+    types: [ synchronize ]
+
 jobs:
   test:
-    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }})
+    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
     runs-on: ${{ matrix.operating-system }}
     strategy:
       fail-fast: false
