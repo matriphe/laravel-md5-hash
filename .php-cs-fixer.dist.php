@@ -85,7 +85,7 @@ return (new Config())
         'not_operator_with_successor_space' => true,
         'object_operator_without_whitespace' => true,
         'ordered_imports' => [
-            'sort_algorithm' => 'length',
+            'sort_algorithm' => 'alpha',
             'imports_order' => ['const', 'class', 'function']
         ],
         'phpdoc_add_missing_param_annotation' => true,
