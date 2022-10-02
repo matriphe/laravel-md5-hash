@@ -1,7 +1,10 @@
 name: Test PR
 on:
   pull_request:
-    types: [ synchronize ]
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 jobs:
   test:
