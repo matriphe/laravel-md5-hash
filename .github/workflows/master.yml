@@ -1,0 +1,76 @@
+name: Test Master
+
+on:
+  push:
+    branches:
+      - master
+
+
+jobs:
+  test_laravel_5:
+    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    needs:
+      - check_php_style
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '7.1', '7.2', '7.3' ]
+        laravel-versions: [ '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8' ]
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ matrix.operating-system }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
+      branch: 1.1.1
+
+
+  test_laravel_6_7:
+    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    needs:
+      - check_php_style
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '7.2', '7.3', '7.4', '8.0' ]
+        laravel-versions: [ '6.*', '7.*' ]
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ matrix.operating-system }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
+
+
+  test_laravel_8:
+    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    needs:
+      - check_php_style
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '7.3', '7.4', '8.0', '8.1' ]
+        laravel-versions: [ '8.*' ]
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ matrix.operating-system }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
+
+
+  test_laravel_9:
+    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    needs:
+      - check_php_style
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '8.0', '8.1' ]
+        laravel-versions: [ '9.*' ]
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ matrix.operating-system }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
