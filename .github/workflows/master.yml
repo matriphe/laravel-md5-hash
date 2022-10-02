@@ -9,8 +9,6 @@ on:
 jobs:
   test_laravel_5:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
-    needs:
-      - check_php_style
     strategy:
       fail-fast: false
       matrix:
@@ -27,8 +25,6 @@ jobs:
 
   test_laravel_6_7:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
-    needs:
-      - check_php_style
     strategy:
       fail-fast: false
       matrix:
@@ -44,8 +40,6 @@ jobs:
 
   test_laravel_8:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
-    needs:
-      - check_php_style
     strategy:
       fail-fast: false
       matrix:
@@ -61,8 +55,6 @@ jobs:
 
   test_laravel_9:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
-    needs:
-      - check_php_style
     strategy:
       fail-fast: false
       matrix:
