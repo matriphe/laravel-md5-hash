@@ -1,0 +1,48 @@
+name: Laravel Test
+
+on:
+  workflow_call:
+    inputs:
+      operating_system:
+        description: The Operating System
+        type: string
+        required: true
+        default: ubuntu-latest
+      php_version:
+        description: The PHP version
+        type: string
+        required: true
+      laravel_version:
+        description: The Laravel version
+        type: string
+        required: true
+
+jobs:
+  test_laravel:
+    name: Laravel ${{ inputs.laravel_version }} (PHP ${{ inputs.php_version }})
+    runs-on: ${{ inputs.operating_system }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP with Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ inputs.php_version }}
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ inputs.operating_system }}-php-${{ inputs.php_version }}-laravel-${{ inputs.laravel_version }}-${{ hashFiles('**/composer.lock') }}
+
+      - name: Install Laravel
+        run: composer require "laravel/framework:${{ inputs.laravel_version }}" --prefer-dist --no-progress
+
+      - name: Update Composer dependencies
+        run: composer update --prefer-dist --no-progress --no-suggest --optimize-autoloader
+
+      - name: Run tests
+        run: vendor/bin/phpunit
