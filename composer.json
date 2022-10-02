@@ -29,5 +29,12 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Matriphe\\Md5Hash\\HashServiceProvider"
+            ]
+        }
     }
 }
