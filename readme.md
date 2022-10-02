@@ -1,6 +1,6 @@
 # Laravel MD5 Hash
 
-![Laravel md5 Hash](https://github.com/matriphe/laravel-md5-hash/workflows/Laravel%20md5%20Hash/badge.svg)
+[![Laravel MD5 Hash](https://github.com/matriphe/laravel-md5-hash/actions/workflows/master.yml/badge.svg)](https://github.com/matriphe/laravel-md5-hash/actions/workflows/master.yml)
 [![Total Download](https://img.shields.io/packagist/dt/matriphe/laravel-md5-hash.svg)](https://packagist.org/packages/matriphe/laravel-md5-hash)
 [![Latest Stable Version](https://img.shields.io/packagist/v/matriphe/laravel-md5-hash.svg)](https://packagist.org/packages/matriphe/laravel-md5-hash)
 
