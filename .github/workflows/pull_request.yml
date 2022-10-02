@@ -9,31 +9,14 @@ on:
 jobs:
   test:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
-    runs-on: ${{ matrix.operating-system }}
     strategy:
       fail-fast: false
       matrix:
         operating-system: [ ubuntu-latest ]
         php-versions: [ '7.2', '7.3', '7.4', '8.0' ]
         laravel-versions: [ '6.*', '7.*' ]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup PHP with Composer
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-versions }}
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v2
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ matrix.php-versions }}-laravel-${{ matrix.laravel-versions }}-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-${{ matrix.php-versions }}-laravel-${{ matrix.laravel-versions }}-
-      - name: Install Laravel
-        run: composer require "laravel/framework:${{ matrix.laravel-versions }}" --prefer-dist --no-progress
-      - name: Update Composer dependencies
-        run: composer update --prefer-dist --no-progress --no-suggest --optimize-autoloader
-      - name: Run test
-        run: vendor/bin/phpunit
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ matrix.operating-system }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
