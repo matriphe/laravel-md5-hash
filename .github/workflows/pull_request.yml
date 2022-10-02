@@ -18,8 +18,8 @@ jobs:
         laravel-versions: [ '6.*', '7.*' ]
     steps:
       - name: Run Laravel Test
-        uses: matriphe/laravel-md5-hash/.github/workflows/action.yml@master
+        uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
         with:
-          os: ${{ runner.os }}
-          php: ${{ matrix.php-versions }}
-          laravel: ${{ matrix.laravel-versions }}
+          operating_system: ${{ runner.os }}
+          php_version: ${{ matrix.php-versions }}
+          laravel_version: ${{ matrix.laravel-versions }}
