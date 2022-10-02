@@ -7,7 +7,7 @@ on:
       - synchronize
 
 jobs:
-  test:
+  test_laravel_6_7:
     name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
     strategy:
       fail-fast: false
@@ -15,6 +15,20 @@ jobs:
         operating-system: [ ubuntu-latest ]
         php-versions: [ '7.2', '7.3', '7.4', '8.0' ]
         laravel-versions: [ '6.*', '7.*' ]
+    uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
+    with:
+      operating_system: ${{ matrix.operating-system }}
+      php_version: ${{ matrix.php-versions }}
+      laravel_version: ${{ matrix.laravel-versions }}
+
+  test_laravel_8:
+    name: Laravel ${{ matrix.laravel-versions }} (PHP ${{ matrix.php-versions }})
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '7.3', '7.4', '8.0', '8.1' ]
+        laravel-versions: [ '8.*' ]
     uses: matriphe/laravel-md5-hash/.github/workflows/laravel_test.yml@master
     with:
       operating_system: ${{ matrix.operating-system }}
