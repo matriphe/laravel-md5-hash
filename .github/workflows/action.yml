@@ -21,7 +21,7 @@ runs:
     - name: Setup PHP with Composer
       uses: shivammathur/setup-php@v2
       with:
-        php-version: ${{ matrix.php-versions }}
+        php-version: ${{ inputs.php }}
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v2
